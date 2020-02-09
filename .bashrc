@@ -51,6 +51,3 @@ fi
 [[ -s "$HOME/.rvm/environments/default" ]] && source "$HOME/.rvm/environments/default"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# Add go
-export PATH="$PATH:$HOME/go/bin"

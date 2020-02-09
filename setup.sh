@@ -24,17 +24,18 @@ setup() {
          git clone https://github.com/ebook-fujimoto/dotfiles "$dotfiles"
      fi
 
+     has yum && sudo yum install -y jq tig
+
      has git && symlink "$dotfiles/.gitconfig" "$HOME/.gitconfig"
      has git && symlink "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
+
+     has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
+     has go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     source "$HOME/.bash_profile"
 
      has go && go get github.com/motemen/ghq
      has go && go get github.com/peco/peco/cmd/peco
      has go && go get github.com/github/hub
-
-     has go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
-     source "$HOME/.bash_profile"
-     
-     has yum && sudo yum install -y jq tig
 }
 
 setup

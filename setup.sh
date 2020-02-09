@@ -31,7 +31,7 @@ setup() {
 
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
      has go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
-     source "$HOME/.bash_profile"
+     source $HOME/.bash_profile
 
      has go && go get github.com/motemen/ghq
      has go && go get github.com/peco/peco/cmd/peco

@@ -1,9 +1,9 @@
- #!/bin/sh
+#!/bin/sh
 
- set -e
- set -u
+set -e
+set -u
 
- setup() {
+setup() {
      dotfiles=$HOME/.dotfiles
 
      has() {
@@ -21,7 +21,15 @@
      fi
 
      has git && symlink "$dotfiles/.gitconfig" "$HOME/.gitconfig"
-     has git && symlink "$dotfiles/.bashrc" "$HOME/.bashrc"
- }
+     has git && symlink "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
 
- setup
+     has go && go get github.com/motemen/ghq
+     has go && go get github.com/peco/peco/cmd/peco
+     has go && go get github.com/github/hub
+
+     has go && symlink "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     
+     has yum && sudo yum install -y jq tig
+}
+
+setup

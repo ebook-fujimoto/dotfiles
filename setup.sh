@@ -26,11 +26,12 @@ setup() {
 
      has yum && sudo yum install -y jq tig
 
-     has git && symlink "$dotfiles/.gitconfig" "$HOME/.gitconfig"
-     has git && symlink "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
+     has git && symlinkf "$dotfiles/.gitconfig" "$HOME/.gitconfig"
+     has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
 
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
-     has go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     has go  && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+
      source $HOME/.bash_profile
 
      has go && go get github.com/motemen/ghq

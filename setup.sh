@@ -14,6 +14,10 @@ setup() {
          [ -e "$2" ] || ln -s "$1" "$2"
      }
 
+     symlinkf() {
+         ln -sf "$1" "$2"
+     }
+
      if [ -d "$dotfiles" ]; then
          (cd "$dotfiles" && git pull --rebase)
      else
@@ -27,7 +31,8 @@ setup() {
      has go && go get github.com/peco/peco/cmd/peco
      has go && go get github.com/github/hub
 
-     has go && symlink "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     has go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     source "$HOME/.bash_profile"
      
      has yum && sudo yum install -y jq tig
 }

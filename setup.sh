@@ -30,13 +30,13 @@ setup() {
      has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
 
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
-     has go  && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
 
      source $HOME/.bash_profile
 
-     has go && go get github.com/motemen/ghq
-     has go && go get github.com/peco/peco/cmd/peco
-     has go && go get github.com/github/hub
+     which go && go get github.com/motemen/ghq
+     which go && go get github.com/peco/peco/cmd/peco
+     which go && go get github.com/github/hub
 }
 
 setup

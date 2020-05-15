@@ -33,10 +33,6 @@ setup() {
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
 
      source $HOME/.bash_profile
-
-     which go && go get github.com/motemen/ghq
-     which go && go get github.com/peco/peco/cmd/peco
-     which go && go get github.com/github/hub
 }
 
 setup

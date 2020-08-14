@@ -10,6 +10,7 @@
 	email = r.fujimoto@ebookjapan.co.jp
 
 [alias]
+    pp = pull -p
     # ファイル名のみの差分を表示する
     difff = diff --name-only
     # staged diff

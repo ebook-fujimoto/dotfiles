@@ -33,7 +33,7 @@ setup() {
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
 
      sudo curl -sL https://download.opensuse.org/repositories/shells:fish/CentOS_7/{shells:fish.repo} -o /etc/yum.repos.d/#1
-     sudo yum install fish
+     sudo yum install -y fish
 
      sudo amazon-linux-extras install python3.8
 

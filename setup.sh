@@ -34,9 +34,9 @@ setup() {
 
      sudo curl -sL https://download.opensuse.org/repositories/shells:fish/CentOS_7/{shells:fish.repo} -o /etc/yum.repos.d/#1
      sudo yum install -y fish util-linux-user
-     sudo chsh -s `which fish` ec2-user
+     sudo chsh -s `which fish`
 
-     sudo amazon-linux-extras install python3.8
+     sudo amazon-linux-extras install -y python3.8
 
      source $HOME/.bash_profile
 }

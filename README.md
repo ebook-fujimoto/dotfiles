@@ -1,24 +1,31 @@
 # dotfiles
 
+## setup modules
+
 ```
 curl -sL https://raw.githubusercontent.com/ebook-fujimoto/dotfiles/master/setup.sh | sh
 ```
 
 ref: https://orgachem.hatenablog.com/entry/2014/05/13/001100
 
-## setup
+## setup git repos
 
-- ssh
-
-```
-sh setup_ssh.sh
-```
-
-go to https://github.com/settings/keys
-
-- go and git
+- new terminal and ghq
 
 ```
-sh setup_go.sh
-sh setup_git.sh
+ssh -T git@github.com; sh $HOME/.dotfiles/ghq.sh
+```
+
+gh auth login --with-token < mytoken
+
+に切り替える予定
+
+## develop .dotfiles
+
+```
+cd $HOME/.dotfiles
+git remote -v
+git remote set-url origin git@github.com:ebook-fujimoto/dotfiles.git
+
+git commit
 ```

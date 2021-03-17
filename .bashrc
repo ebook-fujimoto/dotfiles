@@ -14,11 +14,8 @@ rvm_silence_path_mismatch_check_flag=1 # prevent rvm complaints that nvm is firs
 unset npm # end hack
 
 
-# User specific aliases and functions
-alias python=python36
-
 # modifications needed only in interactive mode
-if [ "$PS1" != "" ]; then
+if [[ -v PS1 ]]; then
     # Set default editor for git
     git config --global core.editor /usr/bin/nano
 
@@ -32,7 +29,7 @@ if [ "$PS1" != "" ]; then
     export PROMPT_COMMAND="history -a;"
 
     # Source for Git PS1 function
-    if ! type -t __git_ps1 && [ -e "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
+    if [ -z "$(type -t __git_ps1)" ] && [ -e "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
         . /usr/share/git-core/contrib/completion/git-prompt.sh
     fi
 
@@ -49,5 +46,6 @@ if [ "$PS1" != "" ]; then
 fi
 
 [[ -s "$HOME/.rvm/environments/default" ]] && source "$HOME/.rvm/environments/default"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

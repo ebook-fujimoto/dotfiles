@@ -24,13 +24,20 @@ setup() {
          git clone https://github.com/ebook-fujimoto/dotfiles "$dotfiles"
      fi
 
-     has yum && sudo yum install -y jq tig
+     has yum && sudo yum install -y jq tig git go
 
      has git && symlinkf "$dotfiles/.gitconfig" "$HOME/.gitconfig"
      has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
 
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     which go && go get github.com/motemen/ghq
+     export GO111MODULE=on
+     which go && go get github.com/peco/peco/cmd/peco
+     sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+     sudo yum install -y gh
+     ## maybe bye
+     which go && go get github.com/github/hub
 
      sudo curl -sL https://download.opensuse.org/repositories/shells:fish/CentOS_7/{shells:fish.repo} -o /etc/yum.repos.d/#1
      sudo yum install -y fish util-linux-user
@@ -39,6 +46,12 @@ setup() {
      sudo amazon-linux-extras install -y python3.8
 
      source $HOME/.bash_profile
+
+     ## timezone
+     ## sudo ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+     sudo timedatectl set-timezone Asia/Tokyo
+
+     sh $dotfiles/setup_ssh.sh
 }
 
 setup

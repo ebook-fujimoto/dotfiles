@@ -25,6 +25,7 @@ setup() {
      fi
 
      has yum && sudo yum install -y jq tig git go
+     has docker && sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
 
      has git && symlinkf "$dotfiles/.gitconfig" "$HOME/.gitconfig"
      has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
@@ -43,7 +44,7 @@ setup() {
      sudo yum install -y fish util-linux-user
      sudo chsh -s `which fish`
 
-     sudo amazon-linux-extras install -y python3.8
+     sudo amazon-linux-extras install -y python3.8 java-openjdk11
 
      source $HOME/.bash_profile
 
@@ -52,6 +53,7 @@ setup() {
      sudo timedatectl set-timezone Asia/Tokyo
 
      sh $dotfiles/setup_ssh.sh
+     sh $dotfiles/resize.sh 20
 }
 
 setup

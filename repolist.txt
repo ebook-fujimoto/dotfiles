@@ -6,4 +6,5 @@ github.com:ebook-japan/no1api-voucher.git
 github.com:ebook-japan/no1api-voucher-admin.git
 github.com:ebook-japan/coin-api.git
 github.com:ebook-japan/coin-batch.git
+github.com:ebook-japan/ticket-api.git
 github.com:ebook-japan/agency-batch.git

@@ -39,6 +39,8 @@ setup() {
      sudo yum install -y gh
      ## maybe bye
      which go && go get github.com/github/hub
+     ## rain
+     which go && go get github.com/aws-cloudformation/rain/cmd/rain
 
      sudo curl -sL https://download.opensuse.org/repositories/shells:fish/CentOS_7/{shells:fish.repo} -o /etc/yum.repos.d/#1
      sudo yum install -y fish util-linux-user

@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/go/bin
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH
 
 source $HOME/.nvm/nvm.sh
 

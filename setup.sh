@@ -31,22 +31,27 @@ setup() {
      has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
 
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
+
+     ## go
+     wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz
+     tar -C $HOME -xzf go1.17.3.linux-amd64.tar.gz
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
-     which go && go get github.com/motemen/ghq
-     export GO111MODULE=on
-     which go && go get github.com/peco/peco/cmd/peco
+     which go && go install github.com/x-motemen/ghq@latest
+     ## export GO111MODULE=on
+     which go && go install github.com/peco/peco/cmd/peco@latest
+     ## maybe not use hub
+     which go && go install github.com/github/hub@latest
+     ## rain
+     which go && go install github.com/aws-cloudformation/rain/cmd/rain@latest
+     ## gh
      sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
      sudo yum install -y gh
-     ## maybe bye
-     which go && go get github.com/github/hub
-     ## rain
-     which go && go get github.com/aws-cloudformation/rain/cmd/rain
 
      sudo curl -sL https://download.opensuse.org/repositories/shells:fish/CentOS_7/{shells:fish.repo} -o /etc/yum.repos.d/#1
      sudo yum install -y fish util-linux-user
      sudo chsh -s `which fish`
 
-     sudo amazon-linux-extras install -y python3.8 java-openjdk11
+     sudo amazon-linux-extras install -y python3.8 java-openjdk11 postgresql9.6
 
      source $HOME/.bash_profile
 

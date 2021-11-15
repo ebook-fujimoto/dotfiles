@@ -24,8 +24,14 @@ setup() {
          git clone https://github.com/ebook-fujimoto/dotfiles "$dotfiles"
      fi
 
-     has yum && sudo yum install -y jq tig git go
-     has docker && sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
+     ## timezone
+     ## sudo ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+     sudo timedatectl set-timezone Asia/Tokyo
+
+     ## disk size
+     sh $dotfiles/resize.sh 20
+
+     has yum && sudo yum install -y jq tig git
 
      has git && symlinkf "$dotfiles/.gitconfig" "$HOME/.gitconfig"
      has git && symlinkf "$dotfiles/.git-completion.bash" "$HOME/.git-completion.bash"
@@ -36,6 +42,7 @@ setup() {
      wget https://golang.org/dl/go1.17.3.linux-amd64.tar.gz
      tar -C $HOME -xzf go1.17.3.linux-amd64.tar.gz
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
+     source "$HOME/.bash_profile"
      which go && go install github.com/x-motemen/ghq@latest
      ## export GO111MODULE=on
      which go && go install github.com/peco/peco/cmd/peco@latest
@@ -52,15 +59,9 @@ setup() {
      sudo chsh -s `which fish`
 
      sudo amazon-linux-extras install -y python3.8 java-openjdk11 postgresql9.6
-
-     source $HOME/.bash_profile
-
-     ## timezone
-     ## sudo ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-     sudo timedatectl set-timezone Asia/Tokyo
+     sudo pip3 install docker-compose
 
      sh $dotfiles/setup_ssh.sh
-     sh $dotfiles/resize.sh 20
 }
 
 setup

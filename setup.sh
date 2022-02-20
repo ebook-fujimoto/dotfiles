@@ -48,8 +48,8 @@ setup() {
      which go && go install github.com/peco/peco/cmd/peco@latest
      ## maybe not use hub
      which go && go install github.com/github/hub@latest
-     ## rain
-     which go && go install github.com/aws-cloudformation/rain/cmd/rain@latest
+     ## rain (amazon linux2 type: 53.medium)
+     ##which go && go install github.com/aws-cloudformation/rain/cmd/rain@latest
      ## gh
      sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
      sudo yum install -y gh

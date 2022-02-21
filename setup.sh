@@ -58,7 +58,7 @@ setup() {
      sudo yum install -y fish util-linux-user
      sudo chsh -s `which fish`
 
-     sudo amazon-linux-extras install -y python3.8 java-openjdk11 postgresql9.6
+     sudo amazon-linux-extras install -y java-openjdk11 postgresql9.6 python3.8
      sudo pip3 install docker-compose
 
      sh $dotfiles/setup_ssh.sh

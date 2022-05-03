@@ -9,3 +9,7 @@ github.com:ebook-japan/ticket-api.git
 github.com:ebook-japan/fastpass-api.git
 github.com:ebook-japan/bridge-api.git
 github.com:ebook-japan/agency-batch.git
+github.com:ebook-japan/filemaker.git
+github.com:ebook-japan/coupon-api.git
+github.com:ebook-japan/coupon-batch.git
+github.com:ebook-japan/voucher-coupon-api.git

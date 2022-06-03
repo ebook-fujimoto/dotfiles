@@ -61,6 +61,10 @@ setup() {
      sudo amazon-linux-extras install -y java-openjdk11 postgresql9.6 python3.8
      sudo pip3 install docker-compose
 
+     curl -sL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+     unzip awscliv2.zip
+     sudo ./aws/install
+
      sh $dotfiles/setup_ssh.sh
 }
 

@@ -39,8 +39,8 @@ setup() {
      has git && symlinkf "$dotfiles/.bashrc" "$HOME/.bashrc"
 
      ## go
-     wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz
-     tar -C $HOME -xzf go1.17.6.linux-amd64.tar.gz
+     wget https://go.dev/dl/go1.18.9.linux-amd64.tar.gz -O go.tgz
+     tar -C $HOME -xzf go.tgz
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
      source "$HOME/.bash_profile"
      which go && go install github.com/x-motemen/ghq@latest

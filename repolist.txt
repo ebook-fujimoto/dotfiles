@@ -2,14 +2,12 @@ github.com:ebook-japan/no1api-devops.git
 github.com:ebook-japan/Infra-AWS-Service-AMI.git
 github.com:ebook-japan/Infra-AWS-Service.git
 github.com:ebook-japan/Infra-AWS-office.git
-github.com:ebook-japan/no1api-voucher.git
 github.com:ebook-japan/no1api-voucher-admin.git
+github.com:ebook-japan/coupon-api.git
 github.com:ebook-japan/coin-api.git
 github.com:ebook-japan/ticket-api.git
 github.com:ebook-japan/fastpass-api.git
 github.com:ebook-japan/bridge-api.git
 github.com:ebook-japan/agency-batch.git
 github.com:ebook-japan/filemaker.git
-github.com:ebook-japan/coupon-api.git
-github.com:ebook-japan/coupon-batch.git
-github.com:ebook-japan/voucher-coupon-api.git
+github.com:ebook-japan/redmine.git

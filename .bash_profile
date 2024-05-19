@@ -16,9 +16,3 @@ source $HOME/.nvm/nvm.sh
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias b='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias v='code $(ghq root)/$(ghq list | peco)'
-
-source ~/.git-completion.bash
-
-# python
-alias python=python3.8
-alias pip=pip3.8

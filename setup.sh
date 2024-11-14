@@ -39,7 +39,7 @@ setup() {
      ## go
      which go && symlinkf "$dotfiles/.bash_profile" "$HOME/.bash_profile"
      source "$HOME/.bash_profile"
-     which go && go install github.com/x-motemen/ghq@v1.5.0
+     which go && go install github.com/x-motemen/ghq@latest
      which go && go install github.com/peco/peco/cmd/peco@latest
 
     ## terraform

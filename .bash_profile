@@ -9,8 +9,7 @@ fi
 
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH
 
-source $HOME/.nvm/nvm.sh
-
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source $HOME/.nvm/nvm.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 alias g='cd $(ghq root)/$(ghq list | peco)'
